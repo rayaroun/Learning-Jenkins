@@ -11,4 +11,4 @@ Part 1:
 
 To use Jenkins we would obtain the official image fromt the docker hub. 
 
-![A test image](img/jenkinDockerHub.png)
+![A test image](imgs/jenkinDockerHub.png)
