@@ -4,7 +4,7 @@ Purpose of the repository -
 
 2. Consecutively I would be creating a multibranch pipeline with a Git Repository. 
 
-3. Also configure Jenkinsfil
+3. Also configure Jenkinsfile
 
 
 
@@ -187,3 +187,17 @@ If we now go back to the pipline page. We can see Dev branch has been built. Upo
 ![Jenkin Image](imgs/jenkinsDevStatus.png)
 
 
+From the above image we can see. It checksout the code. Then runs that stages build, test, deploy.
+
+
+Now, if you want to see if some changes that you make would work or not, go to the branch again and click on one of the builds on the left. Click replay from the left option menu. Now we can edit the code and test it if it works or not. 
+
+You can also choose a particular stage to re run. From the dropdown menu besides the builds. 
+
+![Jenkin Image](imgs/jenkinsBuildHistory.png)
+
+
+
+Finallly, if you want to trigger a jenkins build automatically and not have to select scan again and again. We can install the plugin for the version control system and add the access token to it. 
+
+Thank you.
