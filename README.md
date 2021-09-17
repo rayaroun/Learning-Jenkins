@@ -133,7 +133,13 @@ agnet any - build is going to run on any build on the cluster where jenkins is r
 stages - is where the pipeline is defined in stage and steps
 
 For our purpose we have written three stages - 
-stages {
+
+
+pipeline {
+  
+  agent any
+  
+  stages {
     
     stage("build"){
       
@@ -142,12 +148,14 @@ stages {
         echo 'building the application'
       
       }
+    }
     stage("test"){
       
       steps{
         
         echo 'testing the application'
       
+      }
       }
     stage("deploy"){
       
@@ -157,6 +165,8 @@ stages {
       
       }
     }
+  }
+}
 
   
   
@@ -166,3 +176,14 @@ And view the logs. We see it has found the Jenkinsfile in the dev branch.
 
 
 ![Jenkin Image](imgs/jenkinsJenkinsfileFound.png)
+
+
+If we now go back to the pipline page. We can see Dev branch has been built. Upon selecting that newly created branch we can see the execution at each stage of the branch. 
+
+
+![Jenkin Image](imgs/jenkinsDev.png)
+
+
+![Jenkin Image](imgs/jenkinsDevStatus.png)
+
+
