@@ -9,7 +9,7 @@ Purpose of the repository -
 
 
 
-Part 1: 
+# Part 1: 
 
 To use Jenkins we would obtain the official image fromt the docker hub. 
 
@@ -47,3 +47,20 @@ Open localhost:8080 and enter the key. Select suggested p0lugins or custom plugi
 The Jenkins plugins would start donwloading upon selecting Recommended plugins. 
 
 ![Jenkin Image](imgs/jenkinsPlugins.png)
+
+
+Next, Create an admin user. 
+
+![Jenkin Image](imgs/jenkinsAdminUser.png)
+
+
+
+Upon finishing setup with the recommended plugins, you are greeted with the following screen.
+
+![Jenkin Image](imgs/jenkinsWelcome.png)
+
+
+
+
+# Part 2
+
