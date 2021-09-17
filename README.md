@@ -64,3 +64,105 @@ Upon finishing setup with the recommended plugins, you are greeted with the foll
 
 # Part 2
 
+We would be creating a multi-branch pipeline with Jenkins.
+
+Go to new item. 
+
+Select multibranch pipeline. 
+
+Give name. And in source, select git. Enter a test repository. 
+
+Another thing that you want to give is which branches to discover. 
+
+We are selecting filter by Name (wtih regular expression). This is a regular expression that would get back all the branches
+
+![Jenkin Image](imgs/jenkinsMultiPipelineConfig.png)
+
+Everything else is okay. Jenkins would use Jenkinsfile for othe configuration and it is set to use Jenkinsfile so we're good. 
+
+Next we need to add credentials. Usually we would have that plugin on the home screen but I'm getting it after selecting the pipeline that I built. 
+
+After selecting your pipeline -> click on credentials on the left -> click on Jenkins (global) -> Click on Global credentials unrestricted 
+
+On the left select "add credentials" 
+
+Create one global credntial like this and another system credential
+
+![Jenkin Image](imgs/jenkinsAddCredentials.png)
+
+Now again select your pipeline. Select credential folder add you git hub credentials. 
+
+Now got to the pipline configuration and add the github credentials and save. 
+
+We can see that it scanned the Master and Dev branches for Jenkinsfile.
+
+![Jenkin Image](imgs/jenkinsPipelineLog.png)
+
+
+## Creating a JenkinsFile
+
+Going to the dev branch and creating a Jenkinsfile 
+
+This is a very basic Jenkinsfile 
+
+
+pipeline {
+  
+  agent any
+  
+  stages {
+    
+    stage("build"){
+      
+      steps{
+      
+      }
+    }
+  }
+}
+
+
+A Jenkinsfile can be written as scripted file or declarative.
+
+In the the file -
+
+pipeline - declares we are building a pipeline
+
+agnet any - build is going to run on any build on the cluster where jenkins is running
+
+stages - is where the pipeline is defined in stage and steps
+
+For our purpose we have written three stages - 
+stages {
+    
+    stage("build"){
+      
+      steps{
+        
+        echo 'building the application'
+      
+      }
+    stage("test"){
+      
+      steps{
+        
+        echo 'testing the application'
+      
+      }
+    stage("deploy"){
+      
+      steps{
+        
+        echo 'deploying the application'
+      
+      }
+    }
+
+  
+  
+Now we can go back to the pipeline. Select Scan the pipeline now on the left. 
+
+And view the logs. We see it has found the Jenkinsfile in the dev branch. 
+
+
+![Jenkin Image](imgs/jenkinsJenkinsfileFound.png)
