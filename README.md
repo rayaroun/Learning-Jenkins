@@ -41,7 +41,9 @@ Copy the key provided by jenkins to the initial set up.
 
 ![Jenkin Image](imgs/jenkinsKey.png)
 
-
 Open localhost:8080 and enter the key. Select suggested p0lugins or custom plugins. 
 
 
+The Jenkins plugins would start donwloading upon selecting Recommended plugins. 
+
+![Jenkin Image](imgs/jenkinsPlugins.png)
